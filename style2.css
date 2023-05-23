@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #000;
+    --main-color: #00abf0;
+    --text-color: #fff;
+    --second-bg-color: #111111;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-color);
+}
+
+.container {
+    position: relative;
+    width: 500px;
+    height: 530px;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    display: flex;
+    align-items: center;
+    border-radius: .6rem;
+    padding: 0 45px;
+    overflow: hidden;
+}
+
+.container .login-box {
+    position: relative;
+    width: 100%;
+}
+
+.login-box .page-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-box .page {
+    width: 100%;
+}
+
+.page-box .page.email-page {
+    transform: translateX(0);
+    transition: .25s ease-in-out;
+}
+
+.page-box.active-pass .page.email-page {
+    transform: translateX(-500px);
+}
+
+.page-box .page.password-page {
+    position: absolute;
+    transform: translateX(500px);
+    margin-top: 140px;
+    transition: .25s ease-in-out;
+}
+
+.page-box.active-pass .page.password-page {
+    transform: translateX(0);
+}
+
+.page-box .login-title {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+.login-title h2 {
+    font-size: 32px;
+    line-height: 1.5;
+}
+
+.login-title p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.page .input-box {
+    position: relative;
+    width: 100%;
+    height: 55px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid var(--second-bg-color);
+    outline: none;
+    border-radius: .8rem;
+    font-size: 16px;
+    color: var(--text-color);
+    padding: 0 16px;
+    transition: .3s ease;
+}
+
+.input-box input:focus,
+.input-box input:focus {
+    border-color: var(--main-color);
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: var(--text-color);
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: 1px;
+    left: 12px;
+    font-size: 13px;
+    color: var(--main-color);
+    background: var(--bg-color);
+    padding: 0 6px;
+}
+
+.forgot {
+    margin-top: 6px;
+}
+
+.forgot.show {
+    margin: 10px 0 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forgot a {
+    font-size: 14.5px;
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.forgot a:hover {
+    text-decoration: underline;
+}
+
+.forgot.show label {
+    font-size: 14.5px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.forgot.show label input {
+    accent-color: var(--main-color);
+    cursor: pointer;
+    margin-right: 3px;
+}
+
+.guest-mode {
+    margin: 40px 0;
+}
+
+.guest-mode p {
+    font-size: 14.5px;
+    color: var(--text-color);
+}
+
+.guest-mode a {
+    font-size: 14.5px;
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.guest-mode a:hover {
+    text-decoration: underline;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-box a {
+    font-size: 14.5px;
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.btn-box a:hover {
+    text-decoration: underline;
+}
+
+.btn-box button {
+    width: 90px;
+    height: 40px;
+    background: var(--main-color);
+    border: 2px solid var(--main-color);
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--second-bg-color);
+    font-weight: 600;
+}
+
+.btn-box button:nth-child(1) {
+    background: transparent;
+    color: var(--main-color)
+}
